@@ -27,7 +27,7 @@ An OpenAI-compatible AI can run console commands and read live logs through tool
 ## Quick start
 
 ```bash
-git clone https://github.com/<you>/minecraft_ai_chat.git
+git clone https://github.com/qememe/minecraft_ai_chat.git
 cd minecraft_ai_chat
 chmod +x start.sh
 ./start.sh

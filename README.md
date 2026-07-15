@@ -62,8 +62,8 @@ Or via environment:
 
 ```bash
 export OPENAI_API_KEY=...
-export OPENAI_BASE_URL=https://api.x.ai/v1
-export OPENAI_MODEL=grok-4.5
+export OPENAI_BASE_URL=
+export OPENAI_MODEL=
 ./start.sh
 ```
 

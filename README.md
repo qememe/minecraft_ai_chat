@@ -54,8 +54,8 @@ In the UI → **Settings**:
 
 | Field | Example |
 |---|---|
-| Base URL | `https://api.x.ai/v1` or any OpenAI-compatible endpoint |
-| Model | `grok-4.5` / your model id |
+| Base URL |  any OpenAI-compatible endpoint |
+| Model |  your model id |
 | API key | your key |
 
 Or via environment:

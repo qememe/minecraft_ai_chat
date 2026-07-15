@@ -1,0 +1,6 @@
+{
+  "api_key": "YOUR_API_KEY_HERE",
+  "base_url": "https://api.x.ai/v1",
+  "model": "grok-4.5",
+  "system_note": ""
+}

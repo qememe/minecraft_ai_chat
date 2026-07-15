@@ -1,0 +1,16 @@
+# Copy to server.properties on first run (start.sh also generates a default).
+motd=Minecraft AI Chat Server 26.2 (Fabric)
+gamemode=survival
+difficulty=easy
+max-players=20
+online-mode=true
+enable-command-block=true
+enable-rcon=true
+rcon.password=CHANGE_ME
+rcon.port=25575
+server-port=25565
+view-distance=10
+simulation-distance=10
+spawn-protection=16
+pvp=true
+white-list=false

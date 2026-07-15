@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minecraft AI Chat — 26.2 Fabric</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">⛏️</span>
+        <div>
+          <h1>Minecraft AI Chat</h1>
+          <p class="subtitle">Fabric 26.2 · mods + AI console control</p>
+        </div>
+      </div>
+      <div class="status-cluster">
+        <div id="serverBadge" class="badge badge-off">Server: offline</div>
+        <div id="mcPortBadge" class="badge badge-muted" title="Адрес для входа в Minecraft">MC: …</div>
+        <div id="aiBadge" class="badge badge-muted">AI: not configured</div>
+      </div>
+      <div class="actions">
+        <button id="btnStart" class="btn btn-primary" title="Start Minecraft">Start MC</button>
+        <button id="btnStop" class="btn btn-danger" title="Stop Minecraft">Stop</button>
+        <button id="btnSettings" class="btn">Settings</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel chat-panel">
+        <div class="panel-header">
+          <h2>AI Chat</h2>
+          <button id="btnClearChat" class="btn btn-ghost">Clear</button>
+        </div>
+        <div id="chat" class="chat"></div>
+        <form id="chatForm" class="composer">
+          <textarea id="chatInput" rows="2" placeholder="Например: дай всем по яблоку, сделай день, кто онлайн..." required></textarea>
+          <button type="submit" id="btnSend" class="btn btn-primary">Send</button>
+        </form>
+      </section>
+
+      <section class="panel console-panel">
+        <div class="panel-header">
+          <h2>Server Console</h2>
+          <div class="console-tools">
+            <button id="btnRefreshLogs" class="btn btn-ghost">Refresh</button>
+            <button id="btnScrollEnd" class="btn btn-ghost">↓ End</button>
+          </div>
+        </div>
+        <pre id="console" class="console"></pre>
+        <form id="cmdForm" class="composer cmd-composer">
+          <input id="cmdInput" type="text" placeholder="Console command (no /) e.g. list" autocomplete="off" />
+          <button type="submit" class="btn">Run</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Settings modal -->
+  <div id="settingsModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button id="btnCloseSettings" class="btn btn-ghost">✕</button>
+      </div>
+      <p class="hint">
+        OpenAI-compatible API (xAI / OpenAI / local). Key is stored only in
+        <code>config/settings.json</code> on this machine.
+      </p>
+      <form id="settingsForm" class="settings-form">
+        <label>
+          Base URL
+          <input id="setBaseUrl" type="url" placeholder="https://api.x.ai/v1" />
+        </label>
+        <label>
+          Model
+          <input id="setModel" type="text" placeholder="grok-4.5" />
+        </label>
+        <label>
+          API Key
+          <input id="setApiKey" type="password" placeholder="Leave blank to keep existing" />
+          <span id="keyHint" class="field-hint"></span>
+        </label>
+        <label>
+          Operator note (optional, injected into chat context)
+          <textarea id="setNote" rows="3" placeholder="Server rules, admin nicknames, etc."></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+      <div class="info-box" id="infoBox"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

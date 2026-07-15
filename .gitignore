@@ -1,0 +1,54 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local secrets & machine-specific config
+config/settings.json
+.env
+.env.*
+!.env.example
+
+# Minecraft runtime (downloaded / generated)
+server/libraries/
+server/versions/
+server/logs/
+server/world/
+server/world_nether/
+server/world_the_end/
+server/.fabric/
+server/*.log
+server/usercache.json
+server/whitelist.json
+server/ops.json
+server/banned-ips.json
+server/banned-players.json
+server/session.lock
+server/world/session.lock
+server/fabric-server-launch.jar
+server/server.jar
+server/mods/*.jar
+!server/mods/README.md
+
+# Keep example configs only
+server/server.properties
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs / temp
+*.log
+tmp/
+.cache/
+Задача
